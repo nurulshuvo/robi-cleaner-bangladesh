@@ -1,0 +1,18 @@
+<% if like_castrol_page? == true %>
+<div class="box" style="background: #f5f5f5; width: 350px; height: 120px; padding: 15px; border-radius: 5px;">
+<h4>You Need To Like Our Official Page <br /> To Participate In This Contest. <br />Click
+<a href="#" onclick="go_to_page()">Castrol Bangladesh</a>  To Navigate There Right Now</h4>
+</div>
+    <script type="text/javascript">
+  function go_to_page()
+  {
+      top.location.replace("<%= request.protocol %>www.facebook.com/castrol.bangladesh")
+  }
+</script>
+<% else %>
+    <div style="margin-top: 280px; margin-left: 100px;">
+      <%= link_to (image_tag('next_bg.png')), :start_quiz  %>
+    </div>
+<% end %>
+
+

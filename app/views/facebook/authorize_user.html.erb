@@ -1,0 +1,5 @@
+<script>
+    var prtcl = "<%= request.protocol %>"
+    var uri = 'client_id=<%= ENV['app_id'] %>&redirect_uri='+prtcl+'apps.facebook.com/cleanbd&scope=email,publish_stream,read_friendlists'
+    top.location.href='https://graph.facebook.com/oauth/authorize?'+uri
+</script>

@@ -1,0 +1,171 @@
+<div class="well span9">
+  <legend>Search User
+  <form action="<%= admin_root_url %>" method="GET">
+        <input type="text" name="start_date" placeholder="Start Date" id="start_date_form" />
+        <input type="text" name="end_date" placeholder="End Date" id="end_date_form"/>
+        <input type="submit" value="Search" />
+  </form>
+   <hr />
+  <% if @users %>
+    Total Users: <%= @users.size %><br />
+    Users(Using Castrol): <%= @users_with_castrol.size %><br />
+    Users(Not Using Castrol): <%= @users.size - @users_with_castrol.size %><br />
+        <div id="pie-chart-container" style="min-width: 400px; height: 400px; margin: 20px; border: 1px solid #002a80; padding: 10px; float: left"></div>
+        <% @castrol = (@users_with_castrol.size.to_f)/(@all_users.size.to_f) %>
+        <% @not_castrol = (@users_without_castrol.size.to_f)/(@all_users.size.to_f) %>
+        <script type="text/javascript">
+        $(function () {
+            var total_user = parseInt(<%= @all_users.size.inspect %>)
+            var users = parseInt(<%= @users.size.inspect %>)
+            var castrol_user = parseInt('<%= @users_with_castrol.size.inspect %>')
+            var not_castrol_user = users - castrol_user
+            var chart;
+            $(document).ready(function() {
+                chart = new Highcharts.Chart({
+                    chart: {
+                        renderTo: 'pie-chart-container',
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false
+                    },
+                    title: {
+                        text: 'Browser market shares at a specific website, 2010'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+                        percentageDecimals: 1
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                color: '#000000',
+                                connectorColor: '#000000',
+                                formatter: function() {
+                                    return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+                                }
+                            }
+                        }
+                    },
+                    series: [{
+                        type: 'pie',
+                        name: 'Browser share',
+                        data: [
+                            ['Using Castrol', castrol_user],
+                            ['None Castrol User', not_castrol_user]
+                        ]
+                    }]
+                });
+            });
+
+        });
+    </script>
+  <% end %>
+  </legend>
+  <script type="text/javascript">
+      $("#start_date_form").datepicker({ dateFormat: 'dd-mm-yy' });
+      $("#end_date_form").datepicker({ dateFormat: 'dd-mm-yy' });
+  </script>
+</div>
+<div class="well span9">
+  Total Users: <%= "#{@all_users.size} Users" %> <br/>
+  New Users: <%= @todays_users.nil? ? '0 Users' : "#{@todays_users.size} Users" %>
+  <br/>
+  Today's Castrol User: <%= @todays_castrol_users.size %>
+  <br/>
+  Castrol User: <%= User.where(:ever_use_castrol => 'Yes').size %>
+  <br/>
+  Castrol Users Percentage: <%= ((User.where(:ever_use_castrol => 'Yes').size.to_f)/@all_users.size.to_f).to_f %>%
+</div>
+<div class="clear2" style="clear: both; height: 40px;"></div>
+
+<script type="text/javascript">
+    $(function () {
+        new Highcharts.Chart({
+            chart: { renderTo: 'container',
+            type: 'column'
+            },
+            title: { text: 'Today\'s Statistics' },
+            xAxis: { type: 'Number',
+            categories: ['Total Users', 'New User(s) Today', 'Today\'s Castrol User']
+            },
+            yAxis: {
+                title: { text: 'Users'}
+            },
+            series: [{
+                data: [parseInt(<%= @all_users.size.inspect %>), parseInt(<%= @todays_users.size.inspect %>), parseInt(<%=  User.where(:ever_use_castrol => 'Yes').size.inspect %>) ]
+            }]
+        });
+    });
+</script>
+
+
+
+
+
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 20px; border: 1px solid #002a80; padding: 10px; float: left"></div>
+<div id="container-weekly" style="min-width: 400px; height: 400px; margin: 20px; border: 1px solid #002a80; padding: 10px;float: left"></div>
+<div id="container-weekly-castrol-user" style="min-width: 400px; height: 400px; margin: 20px; border: 1px solid #002a80; padding: 10px;float: left"></div>
+<div id="container-weekly-no-castrol-user" style="min-width: 400px; height: 400px; margin: 20px; border: 1px solid #002a80; padding: 10px;float: left"></div>
+<script type="text/javascript">
+    $(function () {
+        new Highcharts.Chart({
+            chart: { renderTo: 'container-weekly',
+                type: 'column'
+            },
+            title: { text: 'Weekly All Users Statistics' },
+            xAxis: { type: 'Number',
+                categories: [ '<%= Date.today.strftime("%A") %>', '<%= 1.day.ago.strftime("%A") %>', '<%= 2.day.ago.strftime("%A") %>', '<%= 3.day.ago.strftime("%A") %>', '<%= 4.day.ago.strftime("%A")%>', '<%= 5.day.ago.strftime("%A")%>', '<%= 6.day.ago.strftime("%A") %>', '<%= 7.day.ago.strftime("%A") %>']
+            },
+            yAxis: {
+                title: { text: 'Users Per Day'}
+            },
+            series: [{
+                data: [parseInt(<%= @a.inspect %>), parseInt(<%= @b.inspect %>),parseInt(<%= @c.inspect %>),parseInt(<%= @d.inspect %>),parseInt(<%= @e.inspect %>), parseInt(<%= @f.inspect %>) ,parseInt(<%= @g.inspect %>) ]
+            }]
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        new Highcharts.Chart({
+            chart: { renderTo: 'container-weekly-castrol-user',
+                type: 'column'
+            },
+            title: { text: 'Weekly Users Statistics(Who Use Castrol)' },
+            xAxis: { type: 'Number',
+                categories: [ '<%= Date.today.strftime("%A") %>', '<%= 1.day.ago.strftime("%A") %>', '<%= 2.day.ago.strftime("%A") %>', '<%= 3.day.ago.strftime("%A") %>', '<%= 4.day.ago.strftime("%A")%>', '<%= 5.day.ago.strftime("%A")%>', '<%= 6.day.ago.strftime("%A") %>', '<%= 7.day.ago.strftime("%A") %>']
+            },
+            yAxis: {
+                title: { text: 'Users Per Day'}
+            },
+            series: [{
+                data: [parseInt(<%= @h.nil?? 0 :@h.inspect %>), parseInt(<%= @i.nil?? 0 :@i.inspect %>),parseInt(<%= @j.nil?? 0 :@j.inspect %>),parseInt(<%= @k.nil?? 0 :@k.inspect %>),parseInt(<%= @l.nil?? 0 :@l.inspect %>), parseInt(<%= @m.nil?? 0 :@m.inspect %>) ,parseInt(<%= @n.nil?? 0 :@n.inspect %>) ]
+            }]
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        new Highcharts.Chart({
+            chart: { renderTo: 'container-weekly-no-castrol-user',
+                type: 'column'
+            },
+            title: { text: 'Weekly Users Statistics(Who Do Not Use Castrol)' },
+            xAxis: { type: 'Number',
+                categories: [ '<%= Date.today.strftime("%A") %>', '<%= 1.day.ago.strftime("%A") %>', '<%= 2.day.ago.strftime("%A") %>', '<%= 3.day.ago.strftime("%A") %>', '<%= 4.day.ago.strftime("%A")%>', '<%= 5.day.ago.strftime("%A")%>', '<%= 6.day.ago.strftime("%A") %>', '<%= 7.day.ago.strftime("%A") %>']
+            },
+            yAxis: {
+                title: { text: 'Users Per Day'}
+            },
+            series: [{
+                data: [parseInt(<%= @o.nil?? 0 :@o.inspect %>), parseInt(<%= @p.nil?? 0 :@p.inspect %>),parseInt(<%= @q.nil?? 0 :@q.inspect %>),parseInt(<%= @r.nil?? 0 :@r.inspect %>),parseInt(<%= @s.nil?? 0 :@s.inspect %>), parseInt(<%= @t.nil?? 0 :@t.inspect %>) ,parseInt(<%= @u.nil?? 0 :@u.inspect %>) ]
+            }]
+        });
+    });
+</script>
