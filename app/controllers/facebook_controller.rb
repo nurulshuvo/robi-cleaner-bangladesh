@@ -21,6 +21,12 @@ class FacebookController < ApplicationController
   def rules
 
   end
+  def invite
+
+  end
+  def result
+
+  end
 
   def clean
 
