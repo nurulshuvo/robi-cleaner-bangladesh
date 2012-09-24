@@ -6,7 +6,7 @@ Castrol::Application.routes.draw do
 
 
 
-  get "facebook/cleanr"
+  get "facebook/clean"
   get "facebook/landing_page"
   get "facebook/rules"
   get "facebook/invite"
