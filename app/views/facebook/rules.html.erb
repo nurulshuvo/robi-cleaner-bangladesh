@@ -13,8 +13,16 @@
 
   </div><!--end of content-->
 
-  <div class="rules"> <a href="#"><%=image_tag("rules.png")%></a>
+  <div class="rules">  <button onclick="rule('world')" style="background-color:#ffffff;cursor:pointer;border: none;"><%=image_tag("rules.png")%></button>
   </div>
+
+  <div>
+    <div id="rules"></div>
+  </div>
+
+  </body>
+
+
 
   <div class="logo">
     <div class="next"><%=link_to(image_tag("start_game.png"),facebook_clean_path)%></div>

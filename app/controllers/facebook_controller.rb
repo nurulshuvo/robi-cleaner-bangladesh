@@ -1,6 +1,5 @@
 class FacebookController < ApplicationController
-
-  before_filter :create_facebook_instance
+   before_filter :create_facebook_instance
 
   def landing_page
     protocol = request.protocol
