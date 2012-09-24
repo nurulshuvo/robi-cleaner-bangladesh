@@ -18,7 +18,9 @@ class FacebookController < ApplicationController
     #@user = current_user
     #@graph = Koala::Facebook::API.new(@user.token_field)
   end
+  def rules
 
+  end
 
   def clean
 
