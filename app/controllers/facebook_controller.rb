@@ -25,8 +25,26 @@ class FacebookController < ApplicationController
   end
 
   def point
+     ## process the point
      request.params['point']
   end
+
+  def pre_invitation_process
+    # to ask for invitation
+  end
+
+  def post_invitation_process
+     @invited_ids = params[:to].split(',').to_a
+     @user = current_user
+     @invited_ids.each do |uid|
+     @user.invitees.create(:uid => uid)
+     end
+  end
+
+  def score
+    ##showing the score
+  end
+
 
   private
 
@@ -41,7 +59,15 @@ class FacebookController < ApplicationController
     @graph = Koala::Facebook::API.new(@token)
     @user = User.find_or_create_by_uid(@graph.get_object('me')['id'])
     @user.update_attribute(:token_field, @token)
+    check_if_invited_and_update_users_status(@user.uid)
     session[:user_id] = @user.id
+  end
+
+  def check_if_invited_and_update_users_status(uid)
+       @users = User.includes(:invitees).where('invitees.uid = ?', uid)
+       @users.each do |user|
+         user.accepted_invitation+=1
+      end
   end
 
   def authorize_user

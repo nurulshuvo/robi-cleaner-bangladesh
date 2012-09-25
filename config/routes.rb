@@ -10,6 +10,9 @@ Castrol::Application.routes.draw do
   get "facebook/landing_page"
 
   get "facebook/starting_page"
+  get "facebook/post_invitation_process"
+  get "facebook/pre_invitation_process"
+  get "facebook/score"
   post "facebook/point"
 
 

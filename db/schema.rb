@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919064216) do
+ActiveRecord::Schema.define(:version => 20120924062001) do
 
   create_table "cleans", :force => true do |t|
     t.integer  "count"
@@ -19,13 +19,29 @@ ActiveRecord::Schema.define(:version => 20120919064216) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "invitation", :force => true do |t|
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "invitees", :force => true do |t|
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "accepted"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "uid"
     t.string   "token_field"
     t.string   "name"
     t.string   "point"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.integer  "accepted_invitation", :default => 0
   end
 
 end
