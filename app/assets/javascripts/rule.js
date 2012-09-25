@@ -1,3 +1,3 @@
 function rule() {
-    document.getElementById("rules").innerHTML="<p>1)some rule<p></p>2)some rule</p><p>3)some rule</p>";
+    document.getElementById("rules").innerHTML="<p>1. User will get a timer of 20 seconds to complete the challenge.<p></p>2.The visible trash items and their points are:</p><p>Green leaf=-25</p><p>Banana waste=+20 points.</p><p>Empty trash cans=+10 points.</p><p>Plastic pet bottles=+30 points</p><p>Poly bags= +40 points</p><p>Boxes=+15 points.</p><p>Bucket=+25 points.</p><p>Scrap paper=+35 points.</p>";
 }

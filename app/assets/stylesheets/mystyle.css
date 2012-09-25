@@ -17,3 +17,9 @@ div#my-timer{width: 400px;
     text-align: center;
     padding:5px 0px 5px 0px;
 }
+
+.redtext{
+    color: red;
+    text-align: center;
+
+}

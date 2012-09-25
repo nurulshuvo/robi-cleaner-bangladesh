@@ -97,7 +97,7 @@
 }
 
 #wrap .rules{
-	padding:0 0 150px 210px;
+	padding:0 0 10px 205px;
 }
 
 #wrap .replay{
@@ -108,10 +108,16 @@
 #wrap .logo{
 	height:109px;
 	background-image:url(logo.png);
+    margin-top: 30px;
 }
 .next{
 	float:right;
 	width:auto;
 	margin-top:50px;
 	margin-right:5px;
+}
+
+.midsec{
+
+
 }
