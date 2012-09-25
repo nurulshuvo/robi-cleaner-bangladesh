@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f8fbcd7-ab15-4140-ac63-9c993fa71e12" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/facebook_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/facebook_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/facebook/invite.html.erb" afterPath="$PROJECT_DIR$/app/views/facebook/invite.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cd_development.sqlite3" afterPath="$PROJECT_DIR$/cd_development.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/cb.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="cb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,10 +52,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="invitee.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="invitee.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/invitee.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="18" selection-start="86" selection-end="86" vertical-scroll-proportion="0.04901961">
+            <state line="2" column="18" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="5" selection-start="435" selection-end="435" vertical-scroll-proportion="0.38265306">
               <folding />
             </state>
           </provider>
@@ -86,6 +101,7 @@
         <option value="$PROJECT_DIR$/app/views/facebook/invite.html.erb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/models/invitee.rb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -527,7 +543,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/invitee.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="18" selection-start="86" selection-end="86" vertical-scroll-proportion="0.04901961">
+        <state line="2" column="18" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="5" selection-start="435" selection-end="435" vertical-scroll-proportion="0.38265306">
           <folding />
         </state>
       </provider>
