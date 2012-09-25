@@ -10,6 +10,7 @@ class FacebookController < ApplicationController
     else
       render 'authorize_user', :layout => false
     end
+
   end
 
   def rules
@@ -27,7 +28,7 @@ class FacebookController < ApplicationController
   end
 
   def point
-     request.params['point']
+
   end
 
    def post_invitation_process
@@ -53,6 +54,7 @@ class FacebookController < ApplicationController
     @user = User.find_or_create_by_uid(@graph.get_object('me')['id'])
     @user.update_attribute(:token_field, @token)
     session[:user_id] = @user.id
+
   end
 
   def authorize_user
