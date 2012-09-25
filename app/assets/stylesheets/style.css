@@ -1,6 +1,8 @@
 
 
 #wrap{
+
+    height: auto;
 	width:520px;
 	margin:0 auto;
 	box-shadow:1px 1px 3px 2px;
@@ -108,7 +110,7 @@
 #wrap .logo{
 	height:109px;
 	background-image:url(logo.png);
-    margin-top: 30px;
+    margin-bottom: 0;
 }
 .next{
 	float:right;
