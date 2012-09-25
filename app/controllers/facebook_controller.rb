@@ -7,16 +7,11 @@ class FacebookController < ApplicationController
     @authorized = @facebook.authorized?(request.params[:signed_request]) if request.params[:signed_request].present?
     if @authorized
       initialize_or_create_user(protocol)
-
     else
       render 'authorize_user', :layout => false
     end
   end
 
-  def starting_page
-    #@user = current_user
-    #@graph = Koala::Facebook::API.new(@user.token_field)
-  end
   def rules
 
   end
@@ -34,6 +29,15 @@ class FacebookController < ApplicationController
   def point
      request.params['point']
   end
+
+   def post_invitation_process
+     @invited_ids = params[:to].split(',').to_a
+     @user = current_user
+     @invited_ids.each do |uid|
+       @user.invitees.create(:uid => uid)
+     end
+     redirect_to facebook_result_path
+   end
 
   private
 
