@@ -6,7 +6,8 @@ class FacebookController < ApplicationController
     @facebook = Facebook.new(protocol)
     @authorized = @facebook.authorized?(request.params[:signed_request]) if request.params[:signed_request].present?
     if @authorized
-      initialize_or_create_user(protocol)
+      session[:user_id] = initialize_or_create_user(protocol)
+      cookies[:user_id] = session[:user_id]
     else
       render 'authorize_user', :layout => false
     end
@@ -20,7 +21,7 @@ class FacebookController < ApplicationController
 
   end
   def result
-
+    @users = User.order('point DESC').limit(5)
   end
 
   def clean
@@ -28,7 +29,10 @@ class FacebookController < ApplicationController
   end
 
   def point
-
+    @user = current_user
+    @user.point= 0 if @user.point.nil?
+    @user.point+=(request.params[:point]).to_i
+    @user.save
   end
 
    def post_invitation_process
@@ -52,9 +56,9 @@ class FacebookController < ApplicationController
     @token = @facebook.parse_signed_request(request.params[:signed_request])['oauth_token']
     @graph = Koala::Facebook::API.new(@token)
     @user = User.find_or_create_by_uid(@graph.get_object('me')['id'])
-    @user.update_attribute(:token_field, @token)
+    name = @graph.get_object('me')['name']
+    @user.update_attribute(:name, name)
     session[:user_id] = @user.id
-
   end
 
   def authorize_user

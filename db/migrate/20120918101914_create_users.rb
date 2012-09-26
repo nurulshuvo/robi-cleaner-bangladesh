@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :uid
       t.string :token_field
       t.string :name
-      t.string :point
+      t.integer :point
 
       t.timestamps
     end

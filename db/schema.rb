@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20120925093456) do
     t.string   "uid"
     t.string   "token_field"
     t.string   "name"
-    t.string   "point"
+    t.integer  "point"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

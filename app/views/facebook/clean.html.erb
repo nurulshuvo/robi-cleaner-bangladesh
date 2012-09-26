@@ -17,241 +17,395 @@
 
   <style type="text/css">
       form.trash{
-          width: auto;
-          float: left;
+          width: 50px;
       }
+     .murgi{
+         width: 40px;
+         float: left;
+         height: 30px;
+         padding: 2px;
+     }
+
   </style>
 
-  <div class="third_content" >
-    <div class="third_header" style="width: 100%;">
-      <form  class="trash"  method="post" action="<%= facebook_point_path %>">
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $(".trash").live('click', function(){
+            $(this).hide();
+
+        })
+    })
+  </script>
+
+
+  <div class="third_content">
+    <div class="third_header" style="margin-left: 30px;  ;!important">
+      <div class="murgi">
+      <form  class="trash" data-remote="true"  method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="12"/>
         <input type="image" src="<%=image_path("imagek.png")%>" name="imagew" />
       </form>
+      </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagec.png")%>" name="imagew" />
       </form>
+      </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagei.png")%>" name="imagew" />
       </form></div>
-
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("image.png")%>" name="imagew" />
-      </form>    <br> <br> <br> <br>
+      </form></div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagea.png")%>" name="imagew" />
       </form>
+      </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageb.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+        </div>
+      <div class="murgi"><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imaged.png")%>" name="imagew" />
       </form>
+      </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagee.png")%>" name="imagew" />
       </form>
+        </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagef.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+        </div>
+      <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagej.png")%>" name="imagew" />
       </form>
+       </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageh.png")%>" name="imagew" />
       </form>
-      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+        </div>
+
+
+
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagem.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+        </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagef.png")%>" name="imagew" />
-      </form> <br> <br>
+      </form>
+     </div>
+      <br> <br>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageg.png")%>" name="imagew" />
       </form>
+        </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageh.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+       </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageb.png")%>" name="imagew" />
       </form>
-      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+        </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagem.png")%>" name="imagew" />
       </form>
-      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+        </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageo.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+        </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("image.png")%>" name="imagew" />
       </form>
-      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+        </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagea.png")%>" name="imagew" />
       </form>
-      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+        </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageb.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+   </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagec.png")%>" name="imagew" />
       </form>
+        </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagel.png")%>" name="imagew" />
       </form>
+       </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagee.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+        </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("image.png")%>" name="imagew" />
       </form>
+        </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagea.png")%>" name="imagew" />
       </form>
+        </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageb.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+       </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagec.png")%>" name="imagew" />
       </form>
+        </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imaged.png")%>" name="imagew" />
       </form>
+        </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagee.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+        </div>
+      <div class="murgi">
+        <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagef.png")%>" name="imagew" />
       </form>
+      </div>
+      <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagej.png")%>" name="imagew" />
       </form>
+      </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageh.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+      </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagei.png")%>" name="imagew" />
       </form>
+      </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagem.png")%>" name="imagew" />
       </form>
+      </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagek.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+      </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagej.png")%>" name="imagew" />
       </form>
+      </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagea.png")%>" name="imagew" />
       </form>
+      </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageb.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+      </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagec.png")%>" name="imagew" />
       </form>
+      </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagel.png")%>" name="imagew" />
       </form>
+      </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagee.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+      </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagef.png")%>" name="imagew" />
       </form>
+     </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageg.png")%>" name="imagew" />
       </form>
+     </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageh.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+      </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagen.png")%>" name="imagew" />
       </form>
+      </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imagem.png")%>" name="imagew" />
       </form>
+      </div>
+    <div class="murgi">
       <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("imageo.png")%>" name="imagew" />
-      </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+      </form>
+      </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
         <input type="hidden" name="point" value="1"/>
         <input type="image" src="<%=image_path("image.png")%>" name="imagew" />
       </form>
-    <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+   </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
       <input type="hidden" name="point" value="1"/>
       <input type="image" src="<%=image_path("imagea.png")%>" name="imagew" />
-    </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+    </form>
+     </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
     <input type="hidden" name="point" value="1"/>
     <input type="image" src="<%=image_path("imagen.png")%>" name="imagew" />
   </form>
+      </div>
+    <div class="murgi">
     <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
       <input type="hidden" name="point" value="1"/>
       <input type="image" src="<%=image_path("imagec.png")%>" name="imagew" />
-    </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+    </form>
+      </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
     <input type="hidden" name="point" value="1"/>
     <input type="image" src="<%=image_path("imagel.png")%>" name="imagew" />
   </form>
-
+     </div>
+    <div class="murgi">
     <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
       <input type="hidden" name="point" value="1"/>
       <input type="image" src="<%=image_path("imagee.png")%>" name="imagew" />
-    </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+    </form>
+      </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
       <input type="hidden" name="point" value="1"/>
       <input type="image" src="<%=image_path("imagef.png")%>" name="imagew" />
     </form>
-
+      </div>
+    <div class="murgi">
     <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
       <input type="hidden" name="point" value="1"/>
       <input type="image" src="<%=image_path("imagee.png")%>" name="imagew" />
-    </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+    </form>
+      </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
       <input type="hidden" name="point" value="1"/>
       <input type="image" src="<%=image_path("imageh.png")%>" name="imagew" />
     </form>
-
+    </div>
+    <div class="murgi">
     <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
       <input type="hidden" name="point" value="1"/>
       <input type="image" src="<%=image_path("imagen.png")%>" name="imagew" />
-    </form><form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
+    </form>
+      </div>
+    <div class="murgi">
+      <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
       <input type="hidden" name="point" value="1"/>
       <input type="image" src="<%=image_path("imagem.png")%>" name="imagew" />
     </form>
+      </div>
+    <div class="murgi">
     <form  class="trash" data-remote="true" method="post" action="<%= facebook_point_path %>">
       <input type="hidden" name="point" value="1"/>
       <input type="image" src="<%=image_path("imageo.png")%>" name="imagew" />
  </form>
+      </div>
+     </div>
 
 
   </div><!--end of content-->
-  <div class="clear" style="clear:both"></div>
+  <div class="clear" style="clear:both; height: 60px;"></div>
 
   <div class="logo">
     <div class="time_count"><p class="auto_count"><b>20</b></p></div><!--end of time_count-->
