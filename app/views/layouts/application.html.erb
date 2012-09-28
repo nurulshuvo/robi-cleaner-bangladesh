@@ -7,6 +7,86 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= yield %>
+<script type="text/javascript">
+    function myFunction()
+    {
+        var status;
+        setInterval(function(){
+            var request = $.ajax({
+                url: "facebook/not_liked_page",
+                type: "get",
+                dataType: "text",
+                success: function(msg){
+                   status = msg
+                   if (status == 'true')
+                   {
+                       var page_status = $('p#status').text()
+                       if (page_status != status)
+                       {
+                           window.location = "<%= request.protocol %>www.facebook.com/leuviana.it/app_432648530105201"
+                       }
+                   }
+                    else
+                   {
+                       var page_status = $('p#status').text()
+                       if (page_status != status)
+                       {
+                           window.location = "<%= root_url %>"
+                       }
+                   }
+                }
+            })
+        },5000);
+    }
+
+    $(document).ready(function(){
+        myFunction();
+    })
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+      var status = "<%= request.params[:code].nil? %>"
+      var protocol = "<%= request.protocol %>"
+      var dest = 'facebook.com/leuviana.it/app_432648530105201'
+      if (status == 'false')
+      {
+          top.location.href = protocol+dest
+      }
+      else
+      {
+          $("#total").slideDown(1000);
+      }
+
+  })
+</script>
+<div id="total" style="display: none">
+<% if like_client_page?  %>
+    <p id="status" style="display: none">true</p>
+    <%= yield %>
+<% else %>
+<div id="wrap">
+  <p id="status" style="display: none">false</p>
+  <div class="status" style="display: none">false</div>
+  <div class="corner">
+    <img src="<%= image_path 'corner_image.png' %>" />
+  </div><!--end of corner-->
+  <div id="like" style="padding: 10px;!important">
+    <p style="font-size: 25px;"><strong>আমাদের পেজে লাইক দিন</strong></p>
+  </div>
+  <div class="header">
+    <img src="<%= image_path 'first_header.png' %>" />
+  </div><!--end of header-->
+
+  <div class="content">
+    <img src="<%= image_path 'first_content.png' %>" />
+  </div><!--end of content-->
+
+  <div class="footer">
+
+  </div><!--end of logo-->
+
+</div><!--end of wrap-->
+<% end %>
+</div>
 </body>
 </html>

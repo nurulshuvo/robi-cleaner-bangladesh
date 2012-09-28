@@ -44,6 +44,12 @@ class FacebookController < ApplicationController
      redirect_to facebook_result_path
    end
 
+   def not_liked_page
+     @graph = Koala::Facebook::GraphAPI.new(current_user.token_field)
+     @status = !@graph.get_connections("me","likes/#{ENV['fan_page_id']}").empty?
+     render :text => @status
+   end
+
   private
 
   def create_facebook_instance(protocol = nil)
@@ -57,6 +63,7 @@ class FacebookController < ApplicationController
     @graph = Koala::Facebook::API.new(@token)
     @user = User.find_or_create_by_uid(@graph.get_object('me')['id'])
     name = @graph.get_object('me')['name']
+    @user.update_attribute(:token_field, @token)
     @user.update_attribute(:name, name)
     session[:user_id] = @user.id
   end

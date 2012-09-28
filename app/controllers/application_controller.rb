@@ -3,12 +3,13 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_header
 
-  def like_castrol_page?
+  def like_client_page?
+    if current_user
     @graph = Koala::Facebook::GraphAPI.new(current_user.token_field)
-    @graph.get_connections("me","likes/237560939649216").empty?
+    !@graph.get_connections("me","likes/#{ENV['fan_page_id']}").empty?
+    end
   end
 
-  private
 
   def current_user
     @current_user = User.find(session[:user_id] || cookies[:user_id] ) if !session[:user_id].blank?

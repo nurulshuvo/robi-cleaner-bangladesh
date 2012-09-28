@@ -8,6 +8,7 @@ Castrol::Application.routes.draw do
   get "facebook/pre_invitation_process"
   get "facebook/score"
   post "facebook/point"
+  get "facebook/not_liked_page", :as => :default
 
 
   # The priority is based upon order of creation:
