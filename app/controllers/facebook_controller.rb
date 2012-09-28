@@ -68,6 +68,7 @@ class FacebookController < ApplicationController
     @user.update_attribute(:token_field, @token)
     @user.update_attribute(:name, name)
     session[:user_id] = @user.id
+    raise session[:user_id].inspect
   end
 
   def authorize_user
