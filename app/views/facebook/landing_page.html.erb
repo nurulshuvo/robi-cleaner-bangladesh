@@ -1,4 +1,3 @@
-<% if @authorized and (action_name == 'landing_page') %>
     <script type="text/javascript">
         $(document).ready(function(){
             var protocol = "<%= request.protocol %>"
@@ -7,8 +6,6 @@
 
         })
     </script>
-<% end %>
-
 <% if @authorized and (action_name != 'landing_page') %>
     <script type="text/javascript">
         $(document).ready(function(){
