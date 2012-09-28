@@ -3,7 +3,7 @@
 <head>
   <title>Clean Bangladesh</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application"%>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -43,7 +43,16 @@
         myFunction();
     })
 </script>
+<% if @authorized and (action_name == 'landing_page') %>
+<script type="text/javascript">
+  $(document).ready(function(){
+      var protocol = "<%= request.protocol %>"
+      var dest = 'facebook.com/leuviana.it/app_432648530105201'
+          top.location.href = protocol+dest
 
+  })
+</script>
+<% end %>
 
 <% if @authorized and (action_name != 'landing_page') %>
 <script type="text/javascript">
