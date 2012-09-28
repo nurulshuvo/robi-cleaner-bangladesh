@@ -43,25 +43,7 @@
         myFunction();
     })
 </script>
-<% if @authorized and (action_name == 'landing_page') %>
-<script type="text/javascript">
-  $(document).ready(function(){
-      var protocol = "<%= request.protocol %>"
-      var dest = 'facebook.com/leuviana.it/app_432648530105201'
-          top.location.href = protocol+dest
 
-  })
-</script>
-<% end %>
-
-<% if @authorized and (action_name != 'landing_page') %>
-<script type="text/javascript">
-  $(document).ready(function(){
-      $("#total").show(1000);
-
-  })
-</script>
-<% end %>
 <div id="total" style="">
 <% if like_client_page?  %>
     <p id="status" style="display: none">true</p>
