@@ -4,7 +4,7 @@ class FacebookController < ApplicationController
   def landing_page
     protocol = request.protocol
     @facebook = Facebook.new(protocol)
-    @authorized = @facebook.authorized?(request.params[:signed_request]) if request.params[:signed_request].present? and request.params[:code].present?
+    @authorized = @facebook.authorized?(request.params[:signed_request]) if request.params[:signed_request].present?
     if @authorized
       session[:user_id] = initialize_or_create_user(protocol)
     else
@@ -15,14 +15,12 @@ class FacebookController < ApplicationController
    def fan_page
      protocol = request.protocol
      @facebook = Facebook.new(protocol)
-     unless current_user
      @authorized = @facebook.authorized?(request.params[:signed_request]) if request.params[:signed_request].present?
      if @authorized
        session[:user_id] = initialize_or_create_user(protocol)
      else
        render 'authorize_user', :layout => false
      end
-    end
    end
 
   def rules
