@@ -53,6 +53,15 @@
   })
 </script>
 <% end %>
+
+<% if @authorized and (action_name != 'landing_page') %>
+<script type="text/javascript">
+  $(document).ready(function(){
+      $("#total").show(1000);
+
+  })
+</script>
+<% end %>
 <div id="total" style="display: none">
 <% if like_client_page?  %>
     <p id="status" style="display: none">true</p>
