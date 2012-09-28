@@ -7,6 +7,7 @@ class FacebookController < ApplicationController
     @authorized = @facebook.authorized?(request.params[:signed_request]) if request.params[:signed_request].present?
     if @authorized
       session[:user_id] = initialize_or_create_user(protocol)
+      raise session[:user_id].inspect
       cookies = session[:user_id]
     else
      render 'authorize_user', :layout => false
@@ -68,7 +69,6 @@ class FacebookController < ApplicationController
     @user.update_attribute(:token_field, @token)
     @user.update_attribute(:name, name)
     session[:user_id] = @user.id
-    raise session[:user_id].inspect
   end
 
   def authorize_user
