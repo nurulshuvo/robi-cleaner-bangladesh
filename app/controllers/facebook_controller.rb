@@ -21,7 +21,6 @@ class FacebookController < ApplicationController
      else
        render 'authorize_user', :layout => false
      end
-     raise current_user.inspect
    end
 
   def rules
