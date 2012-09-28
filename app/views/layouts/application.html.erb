@@ -43,22 +43,16 @@
         myFunction();
     })
 </script>
+<% if @authorized and (action_name == 'landing_page') %>
 <script type="text/javascript">
   $(document).ready(function(){
-      var status = "<%= request.params[:signed_request].nil? %>"
       var protocol = "<%= request.protocol %>"
       var dest = 'facebook.com/leuviana.it/app_432648530105201'
-      if (status == 'false')
-      {
           top.location.href = protocol+dest
-      }
-      else
-      {
-          $("#total").slideDown(1000);
-      }
 
   })
 </script>
+<% end %>
 <div id="total" style="display: none">
 <% if like_client_page?  %>
     <p id="status" style="display: none">true</p>
