@@ -8,7 +8,7 @@ class FacebookController < ApplicationController
     if @authorized
       session[:user_id] = initialize_or_create_user(protocol)
     else
-    #  render 'authorize_user', :layout => false
+     render 'authorize_user', :layout => false
     end
   end
 
