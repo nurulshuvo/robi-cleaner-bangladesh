@@ -11,8 +11,11 @@ class FacebookController < ApplicationController
     else
       render 'authorize_user', :layout => false
     end
-
   end
+
+   def fan_page
+
+   end
 
   def rules
 

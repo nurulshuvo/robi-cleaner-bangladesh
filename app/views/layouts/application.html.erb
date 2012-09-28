@@ -45,7 +45,7 @@
 </script>
 <script type="text/javascript">
   $(document).ready(function(){
-      var status = "<%= request.params[:code].nil? %>"
+      var status = "<%= request.params[:signed_request].nil? %>"
       var protocol = "<%= request.protocol %>"
       var dest = 'facebook.com/leuviana.it/app_432648530105201'
       if (status == 'false')
