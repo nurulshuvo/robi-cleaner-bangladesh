@@ -6,6 +6,7 @@ $(function(){
         $("b[id=show-time]").html(updateTime);
 
         if(updateTime == 0){
+
             window.location = ("invite");
 
         }

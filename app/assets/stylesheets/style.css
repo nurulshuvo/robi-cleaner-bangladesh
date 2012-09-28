@@ -1,8 +1,6 @@
 
 
 #wrap{
-
-    height: auto;
 	width:520px;
 	margin:0 auto;
 	box-shadow:1px 1px 3px 2px;
@@ -24,11 +22,8 @@
 	height:60px;
 }
 .third_header{
-	width:400px;
-	margin-left:150px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
+	width:200px;
+	margin-left:120px;
 }
 
 /*Content Section */
@@ -45,26 +40,11 @@
 	height:auto;
 	padding:0 10px 0 20px;
 }
-.time_count{
-	width:60px;
-	height:60px;
-	float:right;
-	background-image:url(time_ring.png);
-	background-repeat:no-repeat;
-	margin-top:10px;
-	margin-right:10px;
-}
-.time_count p{
-	font-family:Arial, Helvetica, sans-serif;
-	text-align:center;
-	color:#000;
-	font-size:32px;
-	margin-top:8px;
-}
-
+/*-------------------------------------Fourth Contet--------------------------*/
 #wrap .fourth_content{
 	padding:100px 0 100px 170px;
 }
+/*-------------------------------------Fitth Content------------------------*/
 #wrap .fiveth_content{
 }
 .point{
@@ -73,36 +53,69 @@
 	margin-top:40px;
 
 }
-.name{
+.name_wrap{
 	width:218px;
-	margin-left:164px;
 	height:auto;
+	margin-left:164px;
 	box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
 }
-.name_style{
-	color:#AF1F24;
+.name_and_score{
+	width:auto;
+	height:20px;
+	margin:0;
+}
+.name_and_score p{
+	margin:0;
+	color:#B01F24;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
-	line-height:0px;
+}
+.name{
+	margin:0;
+	float:left;
+	width:160px;
+	margin-left:10px;
+}
+.score{
+	float:right;
+	width:40px;
 }
 .rank{
 	width:226;
-	margin-left:160px;
-	height:65px;
-	margin-right:135px;
+	margin-left:161px;
+	height:45px;
+	margin-right:134px;
 	background-color:#AF1F24;
-	border-radius: 6px;
+	border-radius: 8px;
 }
-.rank_name{
+.rank_name_score{
+	
+	width:auto;
+	height:20px;
+	margin:0px;
+	padding:2px;
+}
+.rank_name_score p{
+	margin:0px;
+	color:#FFF;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:14px;
-	color:#FFF;
-	line-height:0px;
-	text-decoration:none;
+}
+.rank_name{
+	float:left;
+	width:90px;
+	margin:0;
+	margin-left:5px;
+}
+.rank_score{
+	float:left;
+	width:43px;
 }
 
+/*------------------------End of Third Content-------------------------*/
+
 #wrap .rules{
-	padding:0 0 10px 205px;
+	padding:0 0 150px 210px;
 }
 
 #wrap .replay{
@@ -110,19 +123,13 @@
 }
 
 
-#wrap .logo{
+#wrap .footer{
 	height:109px;
 	background-image:url(logo.png);
-    margin-bottom: 0;
 }
 .next{
 	float:right;
 	width:auto;
 	margin-top:50px;
 	margin-right:5px;
-}
-
-.midsec{
-
-
 }
