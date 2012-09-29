@@ -22,9 +22,13 @@ class ApplicationController < ActionController::Base
   helper_method :login_required
 
   def graph
+    if current_user
     @graph = Koala::Facebook::GraphAPI.new(current_user.token_field)
+    end
   end
+  alias_method :load_graph, :graph
   helper_method :graph
+  helper_method :load_graph
 
   def set_header
     response.headers['P3P'] = 'CP="CAO PSA OUR"'
