@@ -1,0 +1,48 @@
+
+<% @users.each do |user|  %>
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion<%= user.id %>" href="#collapse<%= user.id %>">
+        <%= user.name %>
+      </a>
+    </div>
+    <div id="collapse<%= user.id %>" class="accordion-body collapse" style="height: 0px; ">
+      <div class="accordion-inner">
+        <ul style="list-style: none">
+          <b><u>Basic Information</u></b>
+          <li>
+            Email:  <%= user.email %>
+          </li>
+          <li>
+            Phone Number:  <%= user.phone_number %>
+          </li>
+          <div class="clear2"></div>
+          <b><u>Answers:</u></b>
+          <li>
+            Who Is The Castrol Brand Ambassador?:  <%= user.brand_ambassador %>
+          </li>
+          <li>
+            Why Castrol Is Best?:  <%= user.why_best %>
+          </li>
+
+          <li>
+            Did You Ever Use Castrol?:  <%= user.ever_use_castrol%>
+          </li>
+
+          <li>
+            Your Last Purchasing Date?:  <%= user.last_purchasing_date %>
+          </li>
+
+          <li>
+            Your Vehicle Type?:  <%= user.vehicle_type %>
+          </li>
+          <li>
+            Feedback : <%= user.feedback %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  uid: MyString
+  token_field: MyString
+  name: MyString
+  point: MyString
+
+two:
+  uid: MyString
+  token_field: MyString
+  name: MyString
+  point: MyString

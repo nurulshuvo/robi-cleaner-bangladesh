@@ -1,0 +1,151 @@
+<div id="wrap">
+
+  <div class="corner">
+    <img src="<%= image_path 'corner_image.png' %>" />
+  </div><!--end of corner-->
+
+
+  <div class="fiveth_content">
+    <div class="point">
+      <img src="<%= image_path 'point.png' %>" />
+    </div>
+
+    <div class="name_wrap">
+
+     <% @users.limit(5).each do |user| %>
+      <div class="name_and_score">
+        <div class="name"><p><%= user.name %></p></div>
+        <div class="score"><p><strong><%= user.point %></strong></p></div>
+      </div><!--end of name_and_score-->
+      <% end %>
+
+
+
+
+
+    </div><!--end of name_wrap-->
+
+    <% @users.each_with_index do |user, i| %>
+        <% if user.id == current_user.id %>
+    <div class="rank">
+      <div class="rank_name_score">
+        <div class="rank_name"><p>Your Rank</p></div>
+        <div class="rank_score"><p><%= i+1 %></p></div>
+      </div><!--end of rank_name-->
+
+      <div class="rank_name_score">
+        <div class="rank_name">
+          <p>Your Point</p></div>
+        <div class="rank_score"><p><%= user.point %></p></div>
+      </div><!--end of rank_name-->
+
+    </div><!--end of rank-->
+        <% end %>
+        <% end %>
+  </div><!--end of fivth_content-->
+
+  <div class="replay"> <a href="/facebook/rules"><img src="<%= image_path 're_play.png' %>" class="img" /></a>
+  </div>
+
+  <div class="footer">
+
+  </div><!--end of logo-->
+
+</div><!--end of wrap-->
+<style type="text/css">
+    #wrap .fourth_content{
+        padding:120px 140px 120px 170px;
+    }
+        /*-------------------------------------Fitth Content------------------------*/
+    #wrap .fiveth_content{
+    }
+    .point{
+        width:auto;
+        margin-left:160px;
+        margin-top:100px;
+
+    }
+    .name_wrap{
+        width:218px;
+        height:auto;
+        margin-left:164px;
+        box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.1);
+    }
+    .name_and_score{
+        width:auto;
+        height:20px;
+        margin:0;
+    }
+    .name_and_score p{
+        margin:0;
+        color:#B01F24;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:12px;
+    }
+    .name{
+        margin:0;
+        float:left;
+        width:160px;
+        margin-left:10px;
+    }
+    .score{
+        float:right;
+        width:40px;
+    }
+    .rank{
+        width:226;
+        margin-left:161px;
+        height:45px;
+        margin-right:134px;
+        background-color:#AF1F24;
+        border-radius: 8px;
+    }
+    .rank_name_score{
+
+        width:auto;
+        height:20px;
+        margin:0px;
+        padding:2px;
+    }
+    .rank_name_score p{
+        margin:0px;
+        color:#FFF;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:14px;
+    }
+    .rank_name{
+        float:left;
+        width:90px;
+        margin:0;
+        margin-left:5px;
+    }
+    .rank_score{
+        float:right;
+        width:43px;
+    }
+
+        /*------------------------End of Third Content-------------------------*/
+
+    #wrap .rules{
+        padding:0 0 150px 210px;
+    }
+
+    #wrap .replay{
+        width:125px;
+        padding:10px 0 10px 210px;
+    }
+    .img {
+        border:none;
+    }
+
+    #wrap .footer{
+        height:109px;
+        background-image:url(<%= image_path 'logo.png' %>);
+    }
+    .next{
+        float:right;
+        width:auto;
+        margin-top:50px;
+        margin-right:5px;
+    }
+</style>

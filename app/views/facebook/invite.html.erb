@@ -1,0 +1,40 @@
+<div id="wrap">
+
+  <div class="corner">
+     <%=image_tag("corner_image.png")%>
+  </div><!--end of corner-->
+
+  <div class="header">
+
+  </div><!--end of header-->
+
+  <div class="fourth_content"> <a href="#" onclick="sendRequestViaMultiFriendSelector(); return false;"><%=image_tag("fourth_content.png")%></a>
+
+  </div><!--end of content-->
+
+
+  <div class="footer">
+  </div><!--end of logo-->
+
+</div><!--end of wrap-->
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+    FB.init({
+        appId  : '432648530105201',
+        frictionlessRequests: true
+    });
+
+    function sendRequestViaMultiFriendSelector() {
+        FB.ui({method: 'apprequests',
+            message: 'My Great Request'
+        }, requestCallback);
+    }
+
+    function requestCallback(response) {
+        if (response.to.length >= 1)
+            window.location = '/facebook/post_invitation_process?to='+response.to
+        else
+            alert("You should invite only 20 friends")
+    }
+</script>
