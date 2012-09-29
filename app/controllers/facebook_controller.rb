@@ -55,6 +55,10 @@ class FacebookController < ApplicationController
      redirect_to facebook_result_path
    end
 
+   def to_invite
+     redirect_to facebook_invite_path
+   end
+
    def not_liked_page
      @graph = Koala::Facebook::GraphAPI.new(current_user.token_field)
      @status = !@graph.get_connections("me","likes/#{ENV['fan_page_id']}").empty?

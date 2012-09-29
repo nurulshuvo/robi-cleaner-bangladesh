@@ -6,6 +6,7 @@ Castrol::Application.routes.draw do
   post "facebook/fan_page"
   get "facebook/rules"
   get "facebook/invite"
+  get "facebook/to_invite"
   get "facebook/result"
   get "facebook/post_invitation_process"
   get "facebook/pre_invitation_process"

@@ -14,7 +14,7 @@ $(function () {
 
             if (updateTime == 0) {
                 alert("Times Up!")
-                window.location = ("/facebook/invite")
+                window.location = ("/facebook/to_invite")
             }
         }
     }, 1000);
