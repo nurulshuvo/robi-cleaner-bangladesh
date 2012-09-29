@@ -13,13 +13,13 @@
     {
         var status;
         setInterval(function(){
-            alert($('p#status').text())
             var request = $.ajax({
                 url: "/facebook/not_liked_page",
                 type: "get",
                 dataType: "text",
                 success: function(msg){
                    status = msg
+                    alert(msg)
                    if (status == 'true')
                    {
                        var page_status = $('p#status').text()
