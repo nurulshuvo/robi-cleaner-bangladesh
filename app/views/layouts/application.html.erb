@@ -14,7 +14,7 @@
         var status;
         setInterval(function(){
             var request = $.ajax({
-                url: "/not_liked_page",
+                url: "<%= :default %>",
                 type: "get",
                 dataType: "text",
                 success: function(msg){
