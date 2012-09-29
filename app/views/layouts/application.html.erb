@@ -19,7 +19,11 @@
                 dataType: "text",
                 success: function(msg){
                    status = msg
-                    alert(msg)
+                    <%
+                         @graph = Koala::Facebook::GraphAPI.new(current_user.token_field)
+                         @value = !@graph.get_connections("me","likes/389390171126904").empty?
+                    %>
+                    alert('<%= @value %>')
                    if (status == 'true')
                    {
                        var page_status = $('p#status').text()
