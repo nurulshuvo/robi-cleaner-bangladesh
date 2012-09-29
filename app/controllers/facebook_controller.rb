@@ -30,7 +30,7 @@ class FacebookController < ApplicationController
 
   end
   def result
-    @users = User.order('point DESC').limit(5)
+    @users = User.order('point DESC')
   end
 
   def clean
