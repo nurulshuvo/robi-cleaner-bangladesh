@@ -7,11 +7,9 @@ class FacebookController < ApplicationController
     @authorized = @facebook.authorized?(request.params[:signed_request]) if request.params[:signed_request].present?
     if @authorized
       session[:user_id] = initialize_or_create_user(protocol)
-      respond_to do |format|
-        format.js
-      end
+      render 'redirect_to_fan_page', :layout => false
     else
-     render 'authorize_user', :layout => false
+      render 'authorize_user', :layout => false
     end
   end
 
