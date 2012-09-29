@@ -13,6 +13,7 @@
     {
         var status;
         setInterval(function(){
+            alert($('p#status').text())
             var request = $.ajax({
                 url: "/facebook/not_liked_page",
                 type: "get",
@@ -52,7 +53,6 @@
 <% else %>
 <div id="wrap">
   <p id="status" style="display: none">false</p>
-  <div class="status" style="display: none">false</div>
   <div class="corner">
     <img src="<%= image_path 'corner_image.png' %>" />
   </div><!--end of corner-->
