@@ -63,7 +63,7 @@ class FacebookController < ApplicationController
    def not_liked_page
      @graph = Koala::Facebook::GraphAPI.new(current_user.token_field)
      @status = !@graph.get_connections("me","likes/#{ENV['fan_page_id']}").empty?
-     render :text => @status, :layout => false
+     render :text => @status
    end
 
   private
