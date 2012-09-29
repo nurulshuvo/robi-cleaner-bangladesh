@@ -34,7 +34,9 @@ class FacebookController < ApplicationController
   end
 
   def clean
-
+       @user = current_user
+       @user.point = 0;
+       @user.save
   end
 
   def point
