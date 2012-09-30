@@ -1,26 +1,6 @@
 
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
-<script>
-    FB.init({
-        appId  : '432648530105201',
-        frictionlessRequests: true
-    });
-
-    function sendRequestViaMultiFriendSelector() {
-        FB.ui({method: 'apprequests',
-            message: 'Invite more friends to double your usage '
-        }, requestCallback);
-    }
-
-    function requestCallback(response) {
-        if (response.to.length >= 20)
-            window.location = '/facebook/post_invitation_process?to='+response.to
-        else
-            alert("You should invite only 20 friends")
-    }
-</script>
-
 <div id="wrap">
 
   <div class="corner">
@@ -40,3 +20,22 @@
   </div><!--end of logo-->
 
 </div><!--end of wrap-->
+<script>
+    FB.init({
+        appId  : '432648530105201',
+        frictionlessRequests: true
+    });
+
+    function sendRequestViaMultiFriendSelector() {
+        FB.ui({method: 'apprequests',
+            message: 'Invite more friends to double your score'
+        }, requestCallback);
+    }
+
+    function requestCallback(response) {
+        if (response.to.length >= 20)
+            window.location = '/facebook/post_invitation_process?to='+response.to
+        else
+            alert("You should invite only 20 friends")
+    }
+</script>
