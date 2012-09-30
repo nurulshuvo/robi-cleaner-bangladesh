@@ -12,7 +12,8 @@ box1.png: box1-720676bc703f0b6a9bccd871e29c9657.png
 content.png: content-a79b6c97955694c102fceac9d13faf5f.png
 corner.png: corner-07d79c42d8bc0b4fc3b9aa5dbb7275d9.png
 corner_image.png: corner_image-f6321dc45a6abbb40a74228ba3b6bcfb.png
-first_content.png: first_content-5867fcedc0c9047424268ac472696fcb.png
+first_content.png: first_content-76b47ef8ce75bbc9786ab6585a7a9f49.png
+first_content1.png: first_content1-5867fcedc0c9047424268ac472696fcb.png
 first_header.png: first_header-58aa0044d93b470476f1d51e159dbb04.png
 fourth_content.png: fourth_content-ef79c14dd4cebc6e0fa8f3f873c99119.png
 image.png: image-da573264f9ba096fde7d670eadb590d0.png
@@ -43,7 +44,7 @@ pot.png: pot-59e08c8f8a130a7a8ad75163e6e70cc5.png
 re_play.png: re_play-59f1e0b07091a80f6f3af4726475e3a3.png
 rules.png: rules-ce17c6c6a808d695808c8ec7fda281c2.png
 rules_content.png: rules_content-bacf836f3f8fd487d298a0f128971fb0.png
-rules_list.png: rules_list-42d18fcae90ebdc677404594ce46f38d.png
+rules_list.png: rules_list-bacf836f3f8fd487d298a0f128971fb0.png
 score_bg.png: score_bg-6b6724bd4708339afc98501fc9d5fb80.png
 second_content.png: second_content-03e13fc96776b5502c5522b758f04d78.png
 start.png: start-4fbf2cd1c66fb93bae73e3fb601183d6.png
