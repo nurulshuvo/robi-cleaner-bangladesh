@@ -1,8 +1,40 @@
+<script type="text/javascript">
+
+    $(function () {
+        var settimmer = 0;
+        var start = false;
+
+        $("#wrap").show();
+        $(".murgi").live('click', function(){
+            start = true
+        })
+        window.setInterval(function () {
+            if (start == true) {
+            var timeCounter = parseInt($("b#show-time").html())
+            if (parseInt(timeCounter) >= -1) {
+
+                var updateTime = eval(timeCounter) - eval(1);
+                $("b#show-time").html(updateTime)
+
+                if (updateTime < 1) {
+                    $("b#show-time").html('0')
+                }
+
+                if (updateTime == 0) {
+                    alert("Times Up!")
+                    window.location = ("/facebook/to_invite")
+                }
+            }
+            }
+        }, 1000);
+
+    });
+</script>
 <div id="my-timer">
   Page Will Redirect with in <b id="show-time">20</b> seconds
 </div>
 
-<div id="wrap">
+<div id="wrap" style="display: none;">
 
 <div class="corner">
   <%= image_tag("corner_image.png") %>
