@@ -50,8 +50,7 @@
 </script>
 <% end %>
 <div id="total" style="">
-<% @status = true  %>
-<% if @status  %>
+<% if like_client_page?  %>
     <p id="status" style="display: none">true</p>
     <%= yield %>
 <% else %>
