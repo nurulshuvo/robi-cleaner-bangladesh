@@ -54,27 +54,27 @@
     <p id="status" style="display: none">true</p>
     <%= yield %>
 <% else %>
-<div id="wrap">
-  <p id="status" style="display: none">false</p>
-  <div class="corner">
-    <img src="<%= image_path 'corner_image.png' %>" />
-  </div><!--end of corner-->
-  <div id="like" style="padding: 10px;!important">
-    <p style="font-size: 25px;"><strong>আমাদের পেজে লাইক দিন</strong></p>
-  </div>
-  <div class="header">
-    <img src="<%= image_path 'first_header.png' %>" />
-  </div><!--end of header-->
+      <div id="wrap">
 
-  <div class="content">
-    <img src="<%= image_path 'first_content.png' %>" />
-  </div><!--end of content-->
+        <div class="corner">
+          <img src="<%= image_path 'corner_image.png' %>" />
+        </div><!--end of corner-->
+        <div id="like" style="padding: 10px;!important">
+          <%=image_tag("like.png")%>
+        </div>
+        <div class="header">
+          <img src="<%= image_path 'first_header.png' %>" />
+        </div><!--end of header-->
 
-  <div class="footer">
+        <div class="content">
+          <img src="<%= image_path 'first_content.png' %>" />
+        </div><!--end of content-->
 
-  </div><!--end of logo-->
+        <div class="footer">
 
-</div><!--end of wrap-->
+        </div><!--end of logo-->
+
+      </div><!--end of wrap-->
 <% end %>
 </div>
 </body>
