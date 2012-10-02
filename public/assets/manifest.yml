@@ -35,7 +35,10 @@ imageo.png: imageo-318b767f30c81877412203e97e4712f7.png
 imagep.png: imagep-13d11c16c684fed15451632c96e1e102.png
 imageq.png: imageq-fe84477fd29ad85e07db6f08d9515813.png
 imager.png: imager-0ebe49a7a14574139fca2dea90881a7a.png
-logo.png: logo-7cd0a015c92cba2ba23872b6a57bc535.png
+like.png: like-eea4ab776f11cf62ff50c408b567699d.png
+like1.png: like1-e77ad1f5cdfc4611f72d60574b0e5ec6.png
+logo.png: logo-d3f6809fa9ae00059e8f25d8dc7d66a7.png
+logo1.png: logo1-7cd0a015c92cba2ba23872b6a57bc535.png
 next.png: next-a2b4797b89155de6ce3bc3f5ce9ba946.png
 paper_cracked.png: paper_cracked-0e789715fe82388f61a3fbfc393a13fe.png
 point.png: point-9f429579aa53837af652f83816abb866.png
@@ -52,7 +55,7 @@ start_game.png: start_game-fbd07d4ea484d291aabc98eac6a6658d.png
 time_ring.png: time_ring-bb1f4211f1dbdccda9af6395f7b0fdbc.png
 white+green-object.png: white+green-object-57c6276aed7759d335d2e51d3c9e71e6.png
 application.js: application-5a6a1b0ca839e3f6a72b1899af04e07a.js
-application.css: application-8b01dc3140f79736a901b31f53f15cbd.css
+application.css: application-75d0365a056ca16181d35ce053a040d9.css
 images/Blue_bottle.png: images/Blue_bottle-f8e15a75f789cfc327a92fec66bea790.png
 images/Bottle_green_Crunched.png: images/Bottle_green_Crunched-dd53ab8644db9974d014032ddd591513.png
 images/Bottle_mum.png: images/Bottle_mum-238564750db4580aa25c5abf06269a14.png
