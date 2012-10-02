@@ -10,8 +10,10 @@ Yellow-object.png: Yellow-object-8ca87f21702d139ef68c40dd0b309475.png
 banana.png: banana-c97974907b09d817019eae88d674c0d4.png
 box1.png: box1-720676bc703f0b6a9bccd871e29c9657.png
 content.png: content-a79b6c97955694c102fceac9d13faf5f.png
-corner.png: corner-07d79c42d8bc0b4fc3b9aa5dbb7275d9.png
-corner_image.png: corner_image-f6321dc45a6abbb40a74228ba3b6bcfb.png
+corner.png: corner-71a10e8651568358aa72b329f900b9c1.png
+corner1.png: corner1-07d79c42d8bc0b4fc3b9aa5dbb7275d9.png
+corner_image.png: corner_image-71a10e8651568358aa72b329f900b9c1.png
+corner_image1.png: corner_image1-f6321dc45a6abbb40a74228ba3b6bcfb.png
 first_content.png: first_content-76b47ef8ce75bbc9786ab6585a7a9f49.png
 first_content1.png: first_content1-5867fcedc0c9047424268ac472696fcb.png
 first_header.png: first_header-58aa0044d93b470476f1d51e159dbb04.png
@@ -55,7 +57,7 @@ start_game.png: start_game-fbd07d4ea484d291aabc98eac6a6658d.png
 time_ring.png: time_ring-bb1f4211f1dbdccda9af6395f7b0fdbc.png
 white+green-object.png: white+green-object-57c6276aed7759d335d2e51d3c9e71e6.png
 application.js: application-5a6a1b0ca839e3f6a72b1899af04e07a.js
-application.css: application-75d0365a056ca16181d35ce053a040d9.css
+application.css: application-c69ceb3a3de5c2bd6bb0938af9e83af9.css
 images/Blue_bottle.png: images/Blue_bottle-f8e15a75f789cfc327a92fec66bea790.png
 images/Bottle_green_Crunched.png: images/Bottle_green_Crunched-dd53ab8644db9974d014032ddd591513.png
 images/Bottle_mum.png: images/Bottle_mum-238564750db4580aa25c5abf06269a14.png
