@@ -1,4 +1,6 @@
 Castrol::Application.routes.draw do
+  get "ghetu/index"
+
   get "facebook/clean"
   get "facebook/landing_page"
   post "facebook/landing_page"

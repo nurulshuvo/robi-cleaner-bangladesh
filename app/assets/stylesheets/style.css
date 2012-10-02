@@ -16,7 +16,7 @@
     margin-top:125px;
     width:400px;
     margin-left:50px;
-    background-color:#ED2728;
+    /*background-color:#ED2728;*/
     color:#FFF;
     text-align:center;
     border-radius:5px;
@@ -44,6 +44,7 @@
 
 #wrap .content{
     padding:30px 0 0 120px;
+    margin-left: -65px;
 }
 #wrap .second_content{
     padding:10px 0 0 200px;
