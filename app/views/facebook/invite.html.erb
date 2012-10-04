@@ -33,7 +33,7 @@
     }
 
     function requestCallback(response) {
-        if (response.to.length >= 0)
+        if (response.to.length >= 20)
             window.location = '/facebook/post_invitation_process?to='+response.to
         else
             alert("You should invite only 20 friends")
