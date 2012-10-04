@@ -34,6 +34,19 @@
   Time remaining: <b id="show-time">20</b> seconds
 </div>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+      var request = $.ajax({
+          url: "/facebook/link1",
+          type: "get",
+          dataType: "text",
+          success: function(msg){
+              status = msg
+          }
+  });
+  })
+</script>
+
 <div id="wrap" style="display: none;">
 
 <div class="corner">

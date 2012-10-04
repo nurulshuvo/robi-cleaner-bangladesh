@@ -16,6 +16,7 @@ Castrol::Application.routes.draw do
   post "facebook/point"
   get "facebook/not_liked_page", :as => :default
   post "facebook/not_liked_page", :as => :default
+  get "facebook/link1"
 
 
   # The priority is based upon order of creation:

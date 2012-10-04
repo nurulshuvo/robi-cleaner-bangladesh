@@ -66,6 +66,13 @@ class FacebookController < ApplicationController
      render :text => @status
    end
 
+   def link1
+     @user = User.find(current_user.id)
+     @user.point = 0
+     @user.save
+     render :text => current_user.point, :layout => false
+   end
+
   private
 
   def create_facebook_instance(protocol = nil)
@@ -83,6 +90,7 @@ class FacebookController < ApplicationController
     @user.update_attribute(:name, name)
     session[:user_id] = @user.id
   end
+
 
   def authorize_user
     respond_to do |format|
