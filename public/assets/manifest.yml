@@ -14,9 +14,9 @@ Yellow-object.png: Yellow-object-8ca87f21702d139ef68c40dd0b309475.png
 banana.png: banana-c97974907b09d817019eae88d674c0d4.png
 box1.png: box1-720676bc703f0b6a9bccd871e29c9657.png
 content.png: content-a79b6c97955694c102fceac9d13faf5f.png
-corner.png: corner-71a10e8651568358aa72b329f900b9c1.png
-corner_image.png: corner_image-71a10e8651568358aa72b329f900b9c1.png
-first_content.png: first_content-76b47ef8ce75bbc9786ab6585a7a9f49.png
+corner.png: corner-58f280c5b10285d62a9ea3b3878af20e.png
+corner_image.png: corner_image-58f280c5b10285d62a9ea3b3878af20e.png
+first_content.png: first_content-1919092e5fc5fbefa30ecbb211554e7f.png
 first_content1.png: first_content1-5867fcedc0c9047424268ac472696fcb.png
 first_header.png: first_header-c2291edf72f745191549ae9727f47242.png
 fourth_content.png: fourth_content-c2029c657ad0694d914f4289ad602298.png
@@ -41,7 +41,7 @@ imageq.png: imageq-fe84477fd29ad85e07db6f08d9515813.png
 imager.png: imager-0ebe49a7a14574139fca2dea90881a7a.png
 like.png: like-93209442929c97472fb97a2d43f53089.png
 logo.png: logo-d3f6809fa9ae00059e8f25d8dc7d66a7.png
-next.png: next-cd86e503335731d99a94b084a0d40e12.png
+next.png: next-7fa32a16b0bbd732a630ead20a093665.png
 paper_cracked.png: paper_cracked-0e789715fe82388f61a3fbfc393a13fe.png
 point.png: point-5892a51d5988c9f561c0ada622f45cda.png
 poly_crap.png: poly_crap-c0be619355cd38575d6aceec4e1537bb.png
@@ -54,7 +54,7 @@ rules_list.png: rules_list-a612dfe8d1edda3c6292ca3693b9f5d5.png
 score_bg.png: score_bg-6b6724bd4708339afc98501fc9d5fb80.png
 second_content.png: second_content-f145af8d8439cb23f592de51d2769bb4.png
 start.png: start-4fbf2cd1c66fb93bae73e3fb601183d6.png
-start_game.png: start_game-21c284d2b2c14463ad76dc82cee0c335.png
+start_game.png: start_game-b9656ebf436bb76c0ea40070d25a02f8.png
 time_ring.png: time_ring-bb1f4211f1dbdccda9af6395f7b0fdbc.png
 white+green-object.png: white+green-object-57c6276aed7759d335d2e51d3c9e71e6.png
 application.js: application-5a6a1b0ca839e3f6a72b1899af04e07a.js
