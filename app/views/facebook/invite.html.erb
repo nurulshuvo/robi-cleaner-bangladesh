@@ -11,7 +11,7 @@
 
   </div><!--end of header-->
 
-  <div class="fourth_content"> <a href="#" onclick="sendRequestViaMultiFriendSelector(); return false;"><%=image_tag("fourth_content.png")%></a>
+  <div class="fourth_content"> <a href="#" onclick="sendRequestViaMultiFriendSelector();"><%=image_tag("fourth_content.png")%></a>
 
   </div><!--end of content-->
 
@@ -33,7 +33,7 @@
     }
 
     function requestCallback(response) {
-        if (response.to.length >= 20)
+        if (response.to.length >= 0)
             window.location = '/facebook/post_invitation_process?to='+response.to
         else
             alert("You should invite only 20 friends")
