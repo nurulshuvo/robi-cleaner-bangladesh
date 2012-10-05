@@ -39,7 +39,8 @@
 
     function sendRequestViaMultiFriendSelector() {
         FB.ui({method: 'apprequests',
-            message: 'Invite more friends to double your score'
+            message: 'Send this challenge to your friends',
+            display: 'popup'
         }, requestCallback);
     }
 
