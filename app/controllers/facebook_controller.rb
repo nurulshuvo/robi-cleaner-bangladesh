@@ -1,6 +1,8 @@
 class FacebookController < ApplicationController
    before_filter :create_facebook_instance, :except => [:rank]
 
+   layout :selected_layout
+
   def landing_page
     protocol = request.protocol
     @facebook = Facebook.new(protocol)
