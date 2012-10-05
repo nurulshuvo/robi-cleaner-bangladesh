@@ -75,6 +75,10 @@ class FacebookController < ApplicationController
      render :text => current_user.point, :layout => false
    end
 
+   def rank
+     @users = User.where('point is not ?', nil).order('point DESC').limit(20)
+   end
+
   private
 
   def create_facebook_instance(protocol = nil)

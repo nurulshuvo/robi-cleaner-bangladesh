@@ -1,0 +1,16 @@
+<center>
+  <table>
+   <tr>
+     <td>Rank</td>
+     <td>Name</td>
+     <td>Point</td>
+   </tr>
+  <% @users.each_with_index do |user, i|  %>
+    <tr>
+      <td><%= i+1 %></td>
+      <td><%= user.name %></td>
+      <td><%= user.point %></td>
+    </tr>
+  <% end %>
+  </table>
+</center>
