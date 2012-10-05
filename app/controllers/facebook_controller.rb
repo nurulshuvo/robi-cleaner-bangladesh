@@ -44,7 +44,9 @@ class FacebookController < ApplicationController
     @user = current_user
     @user.point= 0 if @user.point.nil?
     @user.point+=(request.params[:point]).to_i
-    @user.save
+    if @user.point and @user.point < 1100
+        @user.save
+     end
   end
 
    def post_invitation_process

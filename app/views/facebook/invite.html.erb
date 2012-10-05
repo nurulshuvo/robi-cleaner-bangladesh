@@ -9,6 +9,12 @@
   </div><!--end of header-->
 
   <div class="fourth_content"> <a href="#" id="challenge_user"><%=image_tag("fourth_content.png")%></a>
+  <div id="hidden_form" style="display: none;">
+  <form action="/facebook/post_invitation_process" method="GET">
+          <input type="hidden" name="to" value="" id="to">
+          <input type="submit" value="" style="background: url(<%= image_path 'check_point.png' %>) no-repeat; height: 50px; width: 150px; border: none; margin:0 50px;">
+  </form>
+  </div>
 
   </div><!--end of content-->
 
@@ -38,9 +44,10 @@
     }
 
     function requestCallback(response) {
-        if (response.to.length >= 20)
-            window.location = '/facebook/post_invitation_process?to='+response.to
-        else
-            alert("You should invite only 20 friends")
+ if (response.to.length >= 20) {
+     $("input#to").val(response.to)
+     $("#hidden_form").show(100);
+    } else
+         alert("You should invite only 20 friends")
     }
 </script>
