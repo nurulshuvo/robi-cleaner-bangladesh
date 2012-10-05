@@ -1,6 +1,3 @@
-
-<div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
 <div id="wrap">
 
   <div class="corner">
@@ -11,7 +8,7 @@
 
   </div><!--end of header-->
 
-  <div class="fourth_content"> <a href="#" onclick="sendRequestViaMultiFriendSelector();"><%=image_tag("fourth_content.png")%></a>
+  <div class="fourth_content"> <a href="#" id="challenge_user"><%=image_tag("fourth_content.png")%></a>
 
   </div><!--end of content-->
 
@@ -20,11 +17,18 @@
   </div><!--end of logo-->
 
 </div><!--end of wrap-->
-<script>
+<script type="text/javascript">
     FB.init({
         appId  : '432648530105201',
         frictionlessRequests: true
     });
+
+  $(document).ready(function(){
+          $("a#challenge_user").live('click', function(e){
+              e.preventDefault();
+              sendRequestViaMultiFriendSelector();
+          })
+  })
 
     function sendRequestViaMultiFriendSelector() {
         FB.ui({method: 'apprequests',
