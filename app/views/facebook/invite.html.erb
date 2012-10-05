@@ -18,13 +18,14 @@
 
 </div><!--end of wrap-->
 <script type="text/javascript">
-    FB.init({
-        appId  : '432648530105201',
-        frictionlessRequests: true
-    });
-
   $(document).ready(function(){
-          $("a#challenge_user").live('click', function(e){
+
+      FB.init({
+          appId  : '432648530105201',
+          frictionlessRequests: true
+      });
+
+      $("a#challenge_user").live('click', function(e){
               e.preventDefault();
               sendRequestViaMultiFriendSelector();
           })
