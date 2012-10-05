@@ -81,6 +81,14 @@ class FacebookController < ApplicationController
 
   private
 
+   def selected_layout
+     if action_name == 'rank'
+       'rank'
+     else
+       'application'
+     end
+   end
+
   def create_facebook_instance(protocol = nil)
     protocol = request.protocol if protocol.nil?
     @facebook = Facebook.new(protocol)
