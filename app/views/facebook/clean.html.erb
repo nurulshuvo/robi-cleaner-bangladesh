@@ -36,12 +36,15 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+      <%
+        current_user.point = 0;
+      %>
       var request = $.ajax({
           url: "/facebook/link1",
           type: "get",
           dataType: "text",
           success: function(msg){
-              status = msg
+
           }
   });
   })
