@@ -27,10 +27,14 @@ class FacebookController < ApplicationController
    end
 
   def rules
-
+        @user = current_user
+        @user.played=0;
+        @user.save
   end
   def invite
-
+      @user = current_user
+      @user.played = 1
+      @user.save
   end
   def result
     @users = User.where('point is not ?', nil).order('point DESC')
@@ -46,7 +50,7 @@ class FacebookController < ApplicationController
     @user = current_user
     @user.point= 0 if @user.point.nil?
     @user.point+=(request.params[:point]).to_i
-    if @user.point and @user.point < 13500
+    if !(@user.played == 1) and @user.point and @user.point < 13500
         @user.save
     end
     params[:point] = nil
@@ -69,6 +73,9 @@ class FacebookController < ApplicationController
    end
 
    def to_invite
+     @user = current_user
+     @user.played = 1
+     @user.save
      redirect_to facebook_invite_path
    end
 
@@ -80,9 +87,9 @@ class FacebookController < ApplicationController
 
    def link1
      @user = User.find(current_user.id)
-     @user.point = 0
+     @user.played = 1
      @user.save
-     render :text => current_user.point, :layout => false
+     render :text => current_user.played, :layout => false
    end
 
    def rank
