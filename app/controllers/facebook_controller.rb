@@ -50,7 +50,7 @@ class FacebookController < ApplicationController
     @user = current_user
     @user.point= 0 if @user.point.nil?
     @user.point+=(request.params[:point]).to_i
-    if !(@user.played == 1) and @user.point and @user.point < 13500
+    if !(@user.played == 1) and @user.point and @user.point < 2250
         @user.save
     end
     params[:point] = nil
