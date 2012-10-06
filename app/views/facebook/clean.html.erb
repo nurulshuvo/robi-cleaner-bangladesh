@@ -78,7 +78,8 @@
     $(document).ready(function () {
         $(".trash").live('click', function () {
             $(this).hide();
-            $(this).show(3000);
+            var randomNumber = Math.floor(Math.random() * 8000) + 3000;
+            $(this).slideUp(randomNumber).delay(randomNumber).fadeIn(2000);
 
         })
     })

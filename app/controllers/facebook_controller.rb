@@ -46,14 +46,22 @@ class FacebookController < ApplicationController
     @user = current_user
     @user.point= 0 if @user.point.nil?
     @user.point+=(request.params[:point]).to_i
-    if @user.point and @user.point < 12000
+    if @user.point and @user.point < 13500
         @user.save
-     end
+    end
+    params[:point] = nil
+    params.delete(:point)
   end
 
    def post_invitation_process
      @invited_ids = params[:to].split(',').to_a
+     default_number_of_invitee = 20
+     current_number_of_invitee = @invited_ids.size.to_i
+     extra_invitee_invited = (current_number_of_invitee - default_number_of_invitee).to_i
+     bonus_point = (extra_invitee_invited*10)
      @user = current_user
+     @user.point += bonus_point
+     @user.save
      @invited_ids.each do |uid|
        @user.invitees.create(:uid => uid)
      end
