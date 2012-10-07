@@ -43,7 +43,7 @@ class FacebookController < ApplicationController
   end
 
   def result
-    @users = User.where('point is not ? and point < ? ', nil, 2550).order('point DESC')
+    @users = User.where('point is not ? and point < ? ', nil, 2250).order('point DESC')
   end
 
   def clean
@@ -104,7 +104,7 @@ class FacebookController < ApplicationController
   end
 
   def rank
-    @users = User.where('point is not ?', nil).order('point DESC')
+    @users = User.where('point is not ? and point < ? ', nil, 2250).order('point DESC')
     @users_a = User.where('point is not ?', nil).order('updated_at DESC')
   end
 
