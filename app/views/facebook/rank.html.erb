@@ -1,4 +1,12 @@
+<style type="text/css">
+  .part{width: 500px; float: left; height: auto;}
+   table tr td{
+       border: 1px solid  #0081c2; padding: 10px;
+   }
+</style>
+<div class="part">
 <center>
+  <h2>Rank</h2>
   <table>
    <tr>
      <td>Rank</td>
@@ -14,3 +22,26 @@
   <% end %>
   </table>
 </center>
+</div>
+
+<div class="part">
+<center>
+  <table>
+    <h2>By Last Attampt</h2>
+   <tr>
+     <td>Rank</td>
+     <td>Name</td>
+     <td>Point</td>
+     <td>Last Attempt</td>
+   </tr>
+  <% @users.each_with_index do |user, i|  %>
+    <tr>
+      <td><%= i+1 %></td>
+      <td><%= user.name %></td>
+      <td><%= user.point %></td>
+      <td><%= time_ago_in_words(user.updated_at) %></td>
+    </tr>
+  <% end %>
+  </table>
+</center>
+</div>
