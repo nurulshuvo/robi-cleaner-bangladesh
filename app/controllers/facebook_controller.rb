@@ -37,7 +37,7 @@ class FacebookController < ApplicationController
       @user.save
   end
   def result
-    @users = User.where('point is not ?', nil).order('point DESC')
+    @users = User.where('point is not ? and point < ? ', nil, 2450).order('point DESC')
   end
 
   def clean
