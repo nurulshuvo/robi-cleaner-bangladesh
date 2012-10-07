@@ -1,7 +1,7 @@
 class FacebookController < ApplicationController
-   before_filter :create_facebook_instance, :except => [:rank]
+  before_filter :create_facebook_instance, :except => [:rank]
 
-   layout :selected_layout
+  layout :selected_layout
 
   def landing_page
     protocol = request.protocol
@@ -15,97 +15,103 @@ class FacebookController < ApplicationController
     end
   end
 
-   def fan_page
-     protocol = request.protocol
-     @facebook = Facebook.new(protocol)
-     @authorized = @facebook.authorized?(request.params[:signed_request]) if request.params[:signed_request].present?
-     if @authorized
-       session[:user_id] = initialize_or_create_user(protocol)
-     else
-       render 'authorize_user', :layout => false
-     end
-   end
+  def fan_page
+    protocol = request.protocol
+    @facebook = Facebook.new(protocol)
+    @authorized = @facebook.authorized?(request.params[:signed_request]) if request.params[:signed_request].present?
+    if @authorized
+      session[:user_id] = initialize_or_create_user(protocol)
+    else
+      render 'authorize_user', :layout => false
+    end
+  end
 
   def rules
-        @user = current_user
-        @user.played=0;
-        @user.save
+    @user = current_user
+    @user.played=0;
+    @user.save
   end
+
   def invite
-      @user = current_user
-      @user.played = 1
+    @user = current_user
+    if @user.point > 2200
+      @user.point = 0
       @user.save
+    end
+    @user.played = 1
+    @user.save
   end
+
   def result
-    @users = User.where('point is not ? and point < ? ', nil, 2450).order('point DESC')
+    @users = User.where('point is not ? and point < ? ', nil, 2550).order('point DESC')
   end
 
   def clean
-       @user = current_user
-       @user.point = 0;
-       @user.save
+    @user = current_user
+    @user.point = 0;
+    @user.save
   end
 
   def point
     @user = current_user
     @user.point= 0 if @user.point.nil?
     @user.point+=(request.params[:point]).to_i
-    if !(@user.played == 1) and @user.point and @user.point < 2250
-        @user.save
+    if !(@user.played == 1) and @user.point and @user.point < 2200
+      @user.save
     end
     params[:point] = nil
     params.delete(:point)
   end
 
-   def post_invitation_process
-     @invited_ids = params[:to].split(',').to_a
-     default_number_of_invitee = 20
-     current_number_of_invitee = @invited_ids.size.to_i
-     extra_invitee_invited = (current_number_of_invitee - default_number_of_invitee).to_i
-     bonus_point = (extra_invitee_invited*10)
-     @user = current_user
-     @user.point += bonus_point
-     @user.save
-     @invited_ids.each do |uid|
-       @user.invitees.create(:uid => uid)
-     end
-     redirect_to facebook_result_path
-   end
+  def post_invitation_process
+    @invited_ids = params[:to].split(',').to_a
+    default_number_of_invitee = 20
+    current_number_of_invitee = @invited_ids.size.to_i
+    extra_invitee_invited = (current_number_of_invitee - default_number_of_invitee).to_i
+    bonus_point = (extra_invitee_invited*10)
+    @user = current_user
+    @user.point += bonus_point
+    @user.save
+    @invited_ids.each do |uid|
+      @user.invitees.create(:uid => uid)
+    end
+    redirect_to facebook_result_path
+  end
 
-   def to_invite
-     @user = current_user
-     @user.played = 1
-     @user.save
-     redirect_to facebook_invite_path
-   end
+  def to_invite
+    @user = current_user
+    @user.played = 1
+    @user.save
+    redirect_to facebook_invite_path
+  end
 
-   def not_liked_page
-     @graph = Koala::Facebook::GraphAPI.new(current_user.token_field)
-     @status = !@graph.get_connections("me","likes/#{ENV['fan_page_id']}").empty?
-     render :text => @status
-   end
+  def not_liked_page
+    @graph = Koala::Facebook::GraphAPI.new(current_user.token_field)
+    @status = !@graph.get_connections("me", "likes/#{ENV['fan_page_id']}").empty?
+    render :text => @status
+  end
 
-   def link1
-     @user = User.find(current_user.id)
-     @user.played = 1
-     @user.save
-     render :text => current_user.played, :layout => false
-   end
+  def link1
+    @user = User.find(current_user.id)
+    @user.played = 1
+    @user.save
+    render :text => current_user.played, :layout => false
+  end
 
-   def rank
-     @users = User.where('point is not ?', nil).order('point DESC')
-     @users_a = User.where('point is not ?', nil).order('updated_at DESC')
-   end
+  def rank
+    @users = User.where('point is not ?', nil).order('point DESC')
+    @users_a = User.where('point is not ?', nil).order('updated_at DESC')
+  end
 
   private
 
-   def selected_layout
-     if action_name == 'rank'
-       'rank'
-     else
-       'application'
-     end
-   end
+  def selected_layout
+    if action_name == 'rank'
+      'rank'
+    else
+      'application'
+    end
+  end
 
   def create_facebook_instance(protocol = nil)
     protocol = request.protocol if protocol.nil?
