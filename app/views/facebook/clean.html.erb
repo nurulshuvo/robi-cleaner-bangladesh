@@ -5,46 +5,45 @@
         var start = false;
 
         $("#wrap").show();
-        $(".murgi").live('click', function(){
+        $(".murgi").live('click', function () {
             start = true
         })
         window.setInterval(function () {
             if (start == true) {
-            var timeCounter = parseInt($("b#show-time").html())
-            if (parseInt(timeCounter) >= -1) {
+                var timeCounter = parseInt($("b#show-time").html())
+                if (parseInt(timeCounter) >= -1) {
+                    var updateTime = eval(timeCounter) - eval(1);
+                    $("b#show-time").html(updateTime)
 
-                var updateTime = eval(timeCounter) - eval(1);
-                $("b#show-time").html(updateTime)
+                    if (updateTime < 1) {
+                        $("b#show-time").html('0')
+                    }
 
-                if (updateTime < 1) {
-                    $("b#show-time").html('0')
+                    if (updateTime == 0) {
+                        var request = $.ajax({
+                            url:"/facebook/link1",
+                            type:"get",
+                            dataType:"text",
+                            success:function (msg) {
+                                alert("Times Up!")
+                                window.location = ("/facebook/to_invite")
+                            }
+                        });
+                    }
                 }
-
-                if (updateTime == 0) {
-                    var request = $.ajax({
-                        url: "/facebook/link1",
-                        type: "get",
-                        dataType: "text",
-                        success: function(msg){
-                            alert("Times Up!")
-                            window.location = ("/facebook/to_invite")
-                        }
-                    });
-                }
-            }
             }
         }, 1000);
 
     });
 </script>
 <div id="my-timer">
-  Time remaining: <b id="show-time">20</b> seconds
+  Time remaining: <b id="show-time">20000</b> seconds
 </div>
 
 <script type="text/javascript">
-  $(document).ready(function(){
+    $(document).ready(function () {
 
-  })
+    })
 </script>
 
 <div id="wrap" style="display: none;">
@@ -464,6 +463,34 @@
 <!--end of logo-->
 <div class="clear" style="clear:both"></div>
 </div><!--end of wrap-->
+
+<script type="text/javascript">
+    $(function () {
+        var start = false;
+        var injustice = false
+        var clicked = 0;
+        var total_clicked = 0;
+        $(".trash").live('click', function () {
+                total_clicked = total_clicked+1
+         })
+        window.setInterval(function () {
+            if (total_clicked > 3)
+            {
+                var request = $.ajax({
+                    url:"/facebook/link1",
+                    type:"get",
+                    dataType:"text",
+                    success:function (msg) {
+                        var okey = 1
+                    }
+                });
+
+            }
+            total_clicked = 0;
+        }, 1000)
+
+    })
+</script>
 
 
 
