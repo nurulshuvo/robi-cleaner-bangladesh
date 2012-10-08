@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121008133912) do
+ActiveRecord::Schema.define(:version => 20121008141253) do
 
   create_table "cleans", :force => true do |t|
     t.integer  "count"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20121008133912) do
     t.datetime "updated_at",                 :null => false
     t.integer  "played"
     t.integer  "click_count", :default => 0
+    t.integer  "total_click", :default => 0
   end
 
 end
