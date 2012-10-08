@@ -3,7 +3,10 @@
    table tr td{
        border: 1px solid  #0081c2; padding: 10px;
    }
+   .clear{clear: both; height: 10px;}
 </style>
+<p>Total User:<strong> <%= User.count %></strong></p>
+<div class="clear"></div>
 <div class="part">
 <center>
   <h2>Rank</h2>
@@ -32,6 +35,7 @@
      <td>Rank</td>
      <td>Name</td>
      <td>Point</td>
+     <td>Invited</td>
      <td>Last Attempt</td>
      <td>Last Game Clicks</td>
      <td>total Clicks</td>
@@ -41,6 +45,7 @@
       <td><%= i+1 %></td>
       <td><%= user.name %></td>
       <td><%= user.point %></td>
+      <td><%= user.invitees.size %></td>
       <td><%= time_ago_in_words(user.updated_at) %></td>
       <td><%= user.click_count %></td>
       <td><%= user.total_click %></td>
