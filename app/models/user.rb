@@ -6,12 +6,8 @@ class User < ActiveRecord::Base
 
 
   def self.reset_point(point)
-    User.all.each do |u|
-      if u.point > point.to_i
-         u.point = 0
-         u.save
-      end
-    end
+    @users = User.where("point > ?", point.to_s)
+    @users.each {|u| u.point = 0; u.save}
   end
 
 
