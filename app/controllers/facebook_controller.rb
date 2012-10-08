@@ -28,13 +28,14 @@ class FacebookController < ApplicationController
 
   def rules
     @user = current_user
-    @user.played=0;
+    @user.played=0
+    @user.click_count = 0
     @user.save
   end
 
   def invite
     @user = current_user
-    if @user.point > 2200
+    if @user.click_count > 45
       @user.point = 0
       @user.save
     end
@@ -54,8 +55,9 @@ class FacebookController < ApplicationController
 
   def point
     @user = current_user
+    @user.click_count = (@user.click_count+1)
     @user.point= 0 if @user.point.nil?
-    if (request.params[:point]).to_i < 41
+    if (request.params[:point]).to_i < 41 and @user.click_count < 46
       @user.point+=(request.params[:point]).to_i
       if !(@user.played == 1) and @user.point and @user.point < 2200
        @user.save
