@@ -1,4 +1,8 @@
 Castrol::Application.routes.draw do
+  get "about/terms"
+
+  get "about/privacy_policy"
+
   get "ghetu/index"
 
   get "facebook/clean"

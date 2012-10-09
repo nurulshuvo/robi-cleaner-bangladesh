@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   private
 
   def update_point
-    if click_count > 55
+    if click_count > 45
        point = 0
     end
   end
