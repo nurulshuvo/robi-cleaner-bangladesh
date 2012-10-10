@@ -18,8 +18,6 @@ class User < ActiveRecord::Base
     if self.click_count > 45
        self.point = 0
        self.played=1
-    else
-      self.click_count = 0
     end
   end
 
