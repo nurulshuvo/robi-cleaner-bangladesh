@@ -14,16 +14,12 @@ class User < ActiveRecord::Base
   private
 
 
-  def ban_user
-    unless click_count > 45
-        self.click_count = 0
-    end
-  end
-
   def update_point
     if self.click_count > 45
        self.point = 0
        self.played=1
+    else
+      self.click_count = 0
     end
   end
 

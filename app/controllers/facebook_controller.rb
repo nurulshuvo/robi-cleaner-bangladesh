@@ -28,9 +28,12 @@ class FacebookController < ApplicationController
 
   def rules
     @user = current_user
-    @user.played=0
+    if @user.click_count < 46;
+      @user.played=0
+    else
+      @user.played = 1
+    end
     @user.click_count = 0   if @user.click_count < 46
-    @user.played = 1
     @user.save
   end
 

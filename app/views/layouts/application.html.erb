@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <% if current_user %>
@@ -60,6 +61,7 @@
 <div id="total" style="">
 <% if like_client_page?  %>
     <p id="status" style="display: none">true</p>
+      <div class="clear" style="clear: both;"></div>
     <%= yield %>
 <% else %>
       <p id="status" style="display: none">false</p>
