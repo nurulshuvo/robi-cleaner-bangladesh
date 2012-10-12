@@ -28,7 +28,7 @@ class FacebookController < ApplicationController
 
   def rules
     @user = current_user
-    if @user.click_count < 56;
+    if @user.click_count < 41;
       @user.played=0
     else
       @user.played = 1
@@ -48,7 +48,7 @@ class FacebookController < ApplicationController
   end
 
   def result
-    @users = User.where('point is not ? and point < ? ', nil, 1700).order('point DESC')
+    @users = User.where('point is not ? and point < ? ', nil, 1500).order('point DESC')
   end
 
   def clean
@@ -64,7 +64,7 @@ class FacebookController < ApplicationController
     @user.point= 0 if @user.point.nil?
     if (request.params[:point]).to_i < 41 and @user.click_count < 41
       @user.point+=(request.params[:point]).to_i
-      if !(@user.played == 1) and @user.point and @user.point < 1700
+      if !(@user.played == 1) and @user.point and @user.point < 1500
        @user.save
       end
     else
@@ -111,7 +111,7 @@ class FacebookController < ApplicationController
   end
 
   def rank
-    @users ||=  User.where('point is not ? and point < ? ', nil, 2450).order('point DESC').limit(100)
+    @users ||=  User.where('point is not ? and point < ? ', nil, 1501).order('point DESC').limit(100)
     @users_a ||= User.where('point is not ?', nil).order('updated_at DESC').limit(100)
   end
 
