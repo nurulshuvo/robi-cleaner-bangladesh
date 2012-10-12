@@ -11,6 +11,15 @@ class User < ActiveRecord::Base
   end
 
 
+  def self.ban_user(point)
+    if self.click_count > point.to_i
+      self.point = 0
+      self.played=1
+    end
+  end
+
+
+
   private
 
 
@@ -21,13 +30,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
-  def ban_user(point)
-    if self.click_count > point.to_i
-      self.point = 0
-      self.played=1
-    end
-  end
 
 
 end
