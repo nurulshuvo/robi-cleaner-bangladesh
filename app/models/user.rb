@@ -12,10 +12,8 @@ class User < ActiveRecord::Base
 
 
   def self.ban_user(point)
-    if self.click_count > point.to_i
-      self.point = 0
-      self.played=1
-    end
+    @users = User.where("click_count > ?", point.to_i)
+    @users.each {|u| u.played = 1; u.point = 0; u.save; }
   end
 
 
