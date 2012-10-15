@@ -80,7 +80,7 @@ class FacebookController < ApplicationController
     default_number_of_invitee = 20
     current_number_of_invitee = @invited_ids.size.to_i
     extra_invitee_invited = (current_number_of_invitee - default_number_of_invitee).to_i
-    bonus_point = (extra_invitee_invited*10)
+    bonus_point = (extra_invitee_invited*11)
     @user = current_user
     @user.point += bonus_point
     @user.save
