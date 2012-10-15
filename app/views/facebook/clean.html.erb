@@ -14,18 +14,17 @@
                 if (parseInt(timeCounter) >= -1) {
                     var updateTime = eval(timeCounter) - eval(1);
                     $("b#show-time").html(updateTime)
-
                     if (updateTime < 1) {
                         $("b#show-time").html('0')
                     }
 
                     if (updateTime == 0) {
+                        alert("Times Up!")
                         var request = $.ajax({
                             url:"/facebook/link1",
                             type:"get",
                             dataType:"text",
                             success:function (msg) {
-                                alert("Times Up!")
                                 window.location = ("/facebook/to_invite")
                             }
                         });
