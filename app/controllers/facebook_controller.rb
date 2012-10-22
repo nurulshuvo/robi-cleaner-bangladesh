@@ -113,7 +113,7 @@
   def rank
     @users ||=  User.where('point is not ?', nil).order('point DESC').limit(100)
     @users_a ||= User.where('point is not ?', nil).order('updated_at DESC').limit(100)
-    @unique = (Invitee.all.map(&:uid).uniq!).size
+    #@unique = (Invitee.all.map(&:uid).uniq!).size
   end
 
   private
