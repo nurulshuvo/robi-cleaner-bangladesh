@@ -8,6 +8,7 @@
 <center>
 <p>Total User:<strong> <%= User.count %></strong></p>
 <p>Total Invited:<strong> <%= Invitee.count %></strong></p>
+<p>*<strong> <%=  (Invitee.all.map(&:uid).uniq!).size%></strong></p>
 </center>
 <div class="clear"></div>
 <div class="part">
