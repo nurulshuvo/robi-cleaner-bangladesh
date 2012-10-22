@@ -28,18 +28,18 @@ class FacebookController < ApplicationController
 
   def rules
     @user = current_user
-    if @user.click_count < 51;
+    if @user.click_count < 60;
       @user.played=0
     else
       @user.played = 1
     end
-    @user.click_count = 0   if @user.click_count < 51
+    @user.click_count = 0   if @user.click_count < 60
     @user.save
   end
 
   def invite
     @user = current_user
-    if @user.click_count > 50
+    if @user.click_count > 60
       @user.point = 0
       @user.save
     end
@@ -62,9 +62,9 @@ class FacebookController < ApplicationController
     @user.click_count = (@user.click_count+1)
     @user.total_click = (@user.total_click+1)
     @user.point= 0 if @user.point.nil?
-    if (request.params[:point]).to_i < 51 and @user.click_count < 51
+    if (request.params[:point]).to_i < 51 and @user.click_count < 60
       @user.point+=(request.params[:point]).to_i
-      if !(@user.played == 1) and @user.point and @user.point < 1801
+      if !(@user.played == 1) and @user.point
        @user.save
       end
     else
@@ -111,7 +111,7 @@ class FacebookController < ApplicationController
   end
 
   def rank
-    @users ||=  User.where('point is not ? and point < ? ', nil, 1801).order('point DESC').limit(100)
+    @users ||=  User.where('point is not ?', nil).order('point DESC').limit(100)
     @users_a ||= User.where('point is not ?', nil).order('updated_at DESC').limit(100)
   end
 
