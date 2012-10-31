@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
     @users.each {|u| u.played = 1; u.point = 0; u.save; }
   end
 
+  def self.ban_user_point(point)
+    @users = User.where("point > ?", point.to_i)
+    @users.each {|u| u.played = 1; u.point = 0; u.click_count = 400000; u.save; }
+  end
+
 
 
   private

@@ -48,7 +48,7 @@
   end
 
   def result
-    @users = User.where('point is not ?', nil).order('point DESC')
+      @users = User.where('point is not ? and point < ?', nil, 2200).order('point DESC')
   end
 
   def clean
