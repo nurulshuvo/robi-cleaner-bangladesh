@@ -24,7 +24,7 @@
     <tr>
       <td><%= i+1 %></td>
       <td><%= user.name %></td>
-      <td><%="https://graph.facebook.com/"+user.uid %></td>
+      <td><%=link_to user.name, "https://graph.facebook.com/"+user.uid %></td>
       <td><%= user.point %></td>
     </tr>
   <% end %>
