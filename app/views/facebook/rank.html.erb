@@ -17,12 +17,14 @@
    <tr>
      <td>Rank</td>
      <td>Name</td>
+     <td>Profile</td>
      <td>Point</td>
    </tr>
   <% @users.each_with_index do |user, i|  %>
     <tr>
       <td><%= i+1 %></td>
       <td><%= user.name %></td>
+      <td><%="https://graph.facebook.com/"+user.uid %></td>
       <td><%= user.point %></td>
     </tr>
   <% end %>

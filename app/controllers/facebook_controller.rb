@@ -48,7 +48,7 @@
   end
 
   def result
-      @users = User.where('point is not ? and point < ?', nil, 2200).order('point DESC')
+      @users = User.where('point is not ? and point < ?', nil, 2500).order('point DESC')
   end
 
   def clean
@@ -62,7 +62,7 @@
     @user.click_count = (@user.click_count+1)
     @user.total_click = (@user.total_click+1)
     @user.point= 0 if @user.point.nil?
-    if (request.params[:point]).to_i < 51 and @user.click_count < 90
+    if (request.params[:point]).to_i < 51 and @user.click_count < 90 and @user.point < 2450
       @user.point+=(request.params[:point]).to_i
       if !(@user.played == 1) and @user.point
        @user.save
