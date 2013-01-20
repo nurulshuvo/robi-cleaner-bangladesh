@@ -25,44 +25,7 @@
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <% if current_user %>
 <script type="text/javascript">
-    function myFunction()
-    {
-        var status;
-        setInterval(function(){
-            var request = $.ajax({
-                url: "/facebook/not_liked_page",
-                type: "get",
-                dataType: "text",
-                success: function(msg){
-                   status = msg
-                    <%
-                         @graph = Koala::Facebook::GraphAPI.new(current_user.token_field)
-                         @value = !@graph.get_connections("me","likes/389390171126904").empty?
-                    %>
-                   if (status == 'true')
-                   {
-                       var page_status = $('p#status').text()
-                       if (page_status != status)
-                       {
-                           window.location = "<%= request.protocol %>www.facebook.com/RobiFanz/app_432648530105201"
-                       }
-                   }
-                    else
-                   {
-                       var page_status = $('p#status').text()
-                       if (page_status != status)
-                       {
-                           window.location = "<%= root_url %>"
-                       }
-                   }
-                }
-            })
-        },20000);
-    }
 
-    $(document).ready(function(){
-        myFunction();
-    })
 </script>
 <style type="text/css">
     body{
@@ -72,7 +35,7 @@
 </style>
 <% end %>
 <div id="total" style="">
-<% if like_client_page?  %>
+<% if true  %>
     <p id="status" style="display: none">true</p>
       <div class="clear" style="clear: both;"></div>
     <%= yield %>

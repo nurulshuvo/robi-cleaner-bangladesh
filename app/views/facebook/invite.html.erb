@@ -8,13 +8,8 @@
 
   </div><!--end of header-->
 
-  <div class="fourth_content"> <a href="#" id="challenge_user"><%=image_tag("fourth_content.png")%></a>
-  <div id="hidden_form" style="display: none;">
-  <form action="/facebook/post_invitation_process" method="GET">
-          <input type="hidden" name="to" value="" id="to">
-          <input type="submit" value="" style="background: url(<%= image_path 'check_point.png' %>) no-repeat; height: 50px; width: 150px; border: none; margin:0 50px;">
-  </form>
-  </div>
+  <div class="fourth_content"> <a href="#" id="challenge_user">Your Score: <%= current_user.point rescue 0 %></a>
+
 
   </div><!--end of content-->
 
@@ -23,32 +18,3 @@
   </div><!--end of logo-->
 
 </div><!--end of wrap-->
-<script type="text/javascript">
-  $(document).ready(function(){
-
-      FB.init({
-          appId  : '432648530105201',
-          frictionlessRequests: true
-      });
-
-      $("a#challenge_user").live('click', function(e){
-              e.preventDefault();
-              sendRequestViaMultiFriendSelector();
-          })
-  })
-
-    function sendRequestViaMultiFriendSelector() {
-        FB.ui({method: 'apprequests',
-            message: 'Send this challenge to your friends',
-            display: 'popup'
-        }, requestCallback);
-    }
-
-    function requestCallback(response) {
- if (response.to.length >= 20) {
-     $("input#to").val(response.to)
-     $("#hidden_form").show(100);
-    } else
-         alert("You should invite 20 or more friends")
-    }
-</script>
